@@ -25,9 +25,10 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Bullet bullet = Instantiate(prefab, shotingPoint.localPosition, shotingPoint.rotation);
+            Debug.Log("HOLA");
+            Bullet bullet = Instantiate(prefab, shotingPoint.position, shotingPoint.rotation);
             bullet.speed = bulletSpeed;
         }
     }

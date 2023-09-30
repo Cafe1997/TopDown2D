@@ -11,6 +11,6 @@ public class Bullet : MonoBehaviour
     void FixedUpdate()
     {
         Quaternion rotation = Quaternion.Euler(0f, 0f, bullet.rotation);
-        bullet.MovePosition(bullet.position + speed * Time.fixedDeltaTime * (Vector2)(rotation * Vector2.up));
+        bullet.MovePosition(bullet.position + speed * Time.fixedDeltaTime * (Vector2)(rotation * Vector2.right));
     }
 }
