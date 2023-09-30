@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Player
     [SerializeField]
-    private float movementSpeed; // movement speed
+    private float movementSpeed;
     [SerializeField]
-    private float rotationSpeed; // rotation speed
+    private float rotationSpeed;
 
     [SerializeField]
     private Rigidbody2D rigidBody;
-
+    
+    //Cannon Shoting
+    [SerializeField]
+    private float bulletSpeed;
+    public Bullet prefab;
+    public Transform shotingPoint;
     private float horizontal;
     private float vertical;
 
     void Update() {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Bullet bullet = Instantiate(prefab, shotingPoint.localPosition, shotingPoint.rotation);
+            bullet.speed = bulletSpeed;
+        }
     }
 
     void FixedUpdate() {
