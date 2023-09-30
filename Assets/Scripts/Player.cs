@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown((int)MouseButton.Left))
         {
             Debug.Log("HOLA");
             Bullet bullet = Instantiate(prefab, shotingPoint.position, shotingPoint.rotation);
